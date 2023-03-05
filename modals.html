@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Webpage Template - Modals</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="static/images/icon.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="static/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="static/utils.js"></script>
+  <script src="static/modal.js" defer></script>
+</head>
+
+
+<body>
+
+  <!-- HEADER -->
+  <div class="w3-container w3-padding x3-grey-bg center">
+    <a href="index.html" class="plain">
+      <h2 class="">Web Template</h2>
+    </a>
+    <a href="index.html" class="plain x3-l8 x3-r8">
+      <i class="bi-house" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Home</span>
+    </a>
+    <a href="plots.html" class="plain x3-l8 x3-r8">
+      <i class="bi-bar-chart" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Plots</span>
+    </a>
+    <a href="modals.html" class="plain x3-l8 x3-r8">
+      <i class="bi-window" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Modals</span>
+    </a>
+  </div>
+
+
+  <!-- CONTENT -->
+  <div class="x3-container auto" style="max-width: 800px;">
+
+    <!-- normal page -->
+    <h2 class="center">Modals</h2>
+
+    <div class="w3-center">
+      <p class="text">Click the button below to open a modal</p>
+
+      <div class="auto" style="max-width: 300px;">
+        <div class="x3-row">
+          <button class="x3-button fit" onclick="openModal('simpleModal')">
+            Open Simple Modal
+          </button>
+        </div>
+
+        <div class="x3-row">
+          <button class="x3-button fit" onclick="openModal('inputModal')">
+            Open Input Modal
+          </button>
+        </div>
+
+        <div class="x3-row">
+          <button class="x3-button fit" onclick="openModal('persistentModal')">
+            Open Persistent Modal
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- MODALS -->
+  <div id="simpleModal" class="modal">
+    <div class="modal-content">
+      <h4>Good Morning</h4>
+      <p class="text">The current temperature is 72 degrees and sunny.</p>
+      <div class="x3-row center">
+        <button class="x3-button modal-close" style="max-width: 150px">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="inputModal" class="modal">
+    <div class="modal-content">
+      <h4>Enter your name:</h4>
+      <form onsubmit="handleSubmit(event)">
+      <div class="x3-row">
+        <input class="x3-input" type="text" id="firstName" autocomplete="off">
+      </div>
+      <div class="x3-row center">
+        <button class="x3-button x3-grey-btn fit modal-close" style="max-width: 150px">Back</button>
+        <input type="submit" value="Continue" class="x3-button fit" style="max-width: 150px">
+      </div></form>
+    </div>
+  </div>
+
+  <div id="persistentModal" class="modal persistent">
+    <div class="modal-content">
+      <h4 class="center">Acknowledge Me</h4>
+      <div class="x3-row center">
+        <button class="x3-button modal-close" style="max-width: 150px">I Understand</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="w3-center w3-container x3-b4" style="margin-top: 64px;">
+    <i class="bi-c-circle"></i>
+    <span>2023 Jack Arnold</span>
+  </footer>
+
+
+</body>
+
+
+
+<!-- SCRIPTS -->
+<script>
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const firstName = $('#firstName').val();
+    console.log('You entered:', firstName);
+    closeModal();
+  }
+
+</script>
+
+
+</html>

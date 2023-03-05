@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Webpage Template - Modals</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="static/images/icon.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="static/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
+  <script src="static/utils.js"></script>
+  <script src="static/plotly.js"></script>
+</head>
+
+
+<body>
+
+  <!-- HEADER -->
+  <div class="w3-container w3-padding x3-grey-bg center">
+    <a href="index.html" class="plain">
+      <h2 class="">Web Template</h2>
+    </a>
+    <a href="index.html" class="plain x3-l8 x3-r8">
+      <i class="bi-house" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Home</span>
+    </a>
+    <a href="plots.html" class="plain x3-l8 x3-r8">
+      <i class="bi-bar-chart" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Plots</span>
+    </a>
+    <a href="modals.html" class="plain x3-l8 x3-r8">
+      <i class="bi-window" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Modals</span>
+    </a>
+  </div>
+
+
+  <!-- CONTENT -->
+  <div class="x3-container auto" style="max-width: 800px;">
+
+    <!-- normal page -->
+    <h2 class="center">Plots</h2>
+    <p class="text center">
+      Powered by
+      <a href="https://plotly.com/javascript/basic-charts/" class="x3-link">
+        Plotly.js
+      </a>
+    </p>
+
+    <div class="x3-row x3-b32">
+      <h4 class="center">Animal Population</h4>
+      <div id="bar-plot"></div>
+    </div>
+
+    <div class="x3-row x3-b32">
+      <h4 class="center">Gender</h4>
+      <div class="auto" style="max-width: 300px">
+        <div id="simple-bar-plot"></div>
+      </div>
+    </div>
+
+    <div class="x3-row x3-b32">
+      <h4 class="center">Food Prices</h4>
+      <div id="line-plot"></div>
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="w3-center w3-container x3-b4" style="margin-top: 64px;">
+    <i class="bi-c-circle"></i>
+    <span>2023 Jack Arnold</span>
+  </footer>
+
+
+</body>
+
+
+
+<!-- SCRIPTS -->
+<script>
+
+  let data, layout, x, y;
+
+  // bar plot
+  x = ['giraffes', 'orangutans', 'monkeys', 'gorillas', 'zebras']
+  y = [20, 14, 23, 24, 11]
+  data = [
+    {
+      x: x,
+      y: y,
+      type: 'bar',
+      name: '',
+      hovertemplate: '%{y}',
+      marker: { color: '#1287A8' },
+    }
+  ];
+  layout = {
+    xaxis: { title: 'Animals', fixedrange: true },
+    yaxis: { title: 'Population', fixedrange: true },
+    height: 300,
+    ...plotlyLayout,
+  };
+  Plotly.newPlot('bar-plot', data, layout, plotlyConfig);
+
+
+  // simple horizontal bar plot
+  x = [16, 12]
+  y = ['Male', 'Female']
+  data = [
+    {
+      x: x,
+      y: y,
+      type: 'bar',
+      orientation: 'h',
+      text: x,
+      textposition: 'outside',
+      outsidetextfont: { size: '14' },
+      name: '',
+      hovertemplate: '%{x}',
+      marker: { color: '#AD2A1A' },
+    }
+  ];
+  layout = {
+    xaxis: { visible: false, fixedrange: true, range: [0, 18] },
+    yaxis: { fixedrange: true },
+    height: 200,
+    ...plotlyLayout,
+  };
+  Plotly.newPlot('simple-bar-plot', data, layout, plotlyConfig);
+
+
+  // line plot
+  x = ['2023-01-04', '2023-02-10', '2023-03-03']
+  y = [24.16, 57.44, 44.20]
+  data = [
+    {
+      x: x,
+      y: y,
+      type: 'scatter',
+      name: 'Vegetables',
+      hovertemplate: '%{x} [%{y}]',
+      marker: { color: '#93A661' },
+    },
+    {
+      x: ['2023-01-06', '2023-02-05', '2023-03-02'],
+      y: [15.05, 23.50, 51.65],
+      type: 'scatter',
+      name: 'Fruits',
+      hovertemplate: '%{x} [%{y}]',
+      marker: { color: '#DA621E' },
+    }
+  ];
+  layout = {
+    xaxis: { title: 'Date', fixedrange: true, range: ['2023-01-01', '2023-04-01'] },
+    yaxis: { title: 'Cost', fixedrange: true, tickprefix: '$', tickformat: ',.2f' },
+    height: 300,
+    legend: { orientation: 'h', y: -0.4, font: { size: 14 } },
+    ...plotlyLayout,
+  };
+  Plotly.newPlot('line-plot', data, layout, plotlyConfig);
+
+</script>
+
+
+</html>

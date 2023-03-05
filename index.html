@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Webpage Template</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="static/images/icon.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="static/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="static/utils.js"></script>
+</head>
+
+
+<body>
+
+  <!-- HEADER -->
+  <div class="w3-container w3-padding x3-grey-bg center">
+    <a href="index.html" class="plain">
+      <h2 class="">Web Template</h2>
+    </a>
+    <a href="index.html" class="plain x3-l8 x3-r8">
+      <i class="bi-house" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Home</span>
+    </a>
+    <a href="plots.html" class="plain x3-l8 x3-r8">
+      <i class="bi-bar-chart" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Plots</span>
+    </a>
+    <a href="modals.html" class="plain x3-l8 x3-r8">
+      <i class="bi-window" style="font-size: 16px;"></i>
+      <span class="x3-l4 text x3-link-plain">Modals</span>
+    </a>
+  </div>
+
+
+  <!-- CONTENT -->
+  <div class="x3-container auto" style="max-width: 800px;">
+
+    <!-- generic section -->
+    <h2 class="center">Home</h2>
+
+    <p class="text" align="justify">
+      Purdue University is a public land-grant research university in West Lafayette,
+      Indiana, and the flagship campus of the Purdue University system. The
+      university was founded in 1869 after Lafayette businessman John Purdue donated
+      land and money to establish a college of science, technology, and agriculture
+      in his name. The first classes were held on September 16, 1874, with six
+      instructors and 39 students. It has been ranked as among the best public universities
+      in the United States by major institutional rankings, and is renowned for its
+      engineering program.
+    </p>
+    <p class="text">
+      <a href="https://www.purdue.edu/" class="x3-link">Learn More</a>
+    </p>
+    <br>
+
+
+    <!-- form -->
+    <h3 class="center">Form</h3>
+    <div>
+      <form onsubmit="return handleSubmit(event)">
+
+        <!-- text boxes -->
+        <div class="x3-row">
+          <label class="x3-label">First Name</label>
+          <input class="x3-input" type="text" id="firstName" required autocomplete="off">
+        </div>
+
+        <div class="x3-row">
+          <label class="x3-label">Email</label>
+          <input class="x3-input" type="text" id="email" autocomplete="off">
+        </div>
+
+        <!-- select -->
+        <div class="x3-row">
+          <label class="x3-label">Fruit Choice</label>
+          <select class="x3-select" id="fruitSelect">
+            <option disabled selected>-- select --</option>
+            <option value="a">Apple</option>
+            <option value="b">Banana</option>
+            <option value="c">Carrot</option>
+          </select>
+        </div>
+
+        <!-- checkboxes -->
+        <div class="x3-row text center">
+          Which vehicles do you own?
+        </div>
+        <div class="auto" style="max-width: 100px">
+          <div>
+            <input type="checkbox" class="x3-check" id="vehicle1" value="Bike">
+            <label for="vehicle1" class="x3-check-label">Bike</label>
+          </div>
+          <div>
+            <input type="checkbox" class="x3-check" id="vehicle2" value="Car">
+            <label for="vehicle2" class="x3-check-label">Car</label>
+          </div>
+          <div>
+            <input type="checkbox" class="x3-check" id="vehicle3" value="Scooter">
+            <label for="vehicle3" class="x3-check-label">Scooter</label>
+          </div>
+        </div>
+
+        <br>
+        <div class="x3-row center">
+          <input type="submit" value="Submit" class="x3-button x3-green-btn">
+        </div>
+      </form>
+    </div>
+    <br>
+
+    <!-- multi buttons -->
+    <div class="x3-row-16 center x3-bot-32">
+      <h4 class="center">Click the buttons below</h4>
+      <button class="x3-button fit" style="max-width: 150px" onclick="handleClick('add')">
+        Add
+      </button>
+      <button class="x3-button x3-red-btn fit" style="max-width: 150px" onclick="handleClick('delete')">
+        Delete
+      </button>
+    </div>
+
+    <!-- table -->
+    <div class="x3-row-16">
+      <h4 class="center">Tables</h4>
+      <div class="w3-row x3-b32">
+        <table class="w3-table w3-bordered w3-border x3-rounded">
+          <tr>
+            <th>State</th>
+            <th>City</th>
+            <th>Registered Users</th>
+          </tr>
+          <tr>
+            <td>Illinois</td>
+            <td>Chicago</td>
+            <td>3450</td>
+          </tr>
+          <tr>
+            <td>Indiana</td>
+            <td>Indianpolis</td>
+            <td>1400</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="w3-row">
+        <div class="center semibold text">By Gender:</div>
+        <table class="w3-table auto" style="max-width: 150px;">
+          <tr>
+            <td>Male</td>
+            <td>146</td>
+          </tr>
+          <tr>
+            <td>Female</td>
+            <td>260</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br>
+
+    <!-- icons -->
+    <div class="x3-row-16 center x3-bot-32">
+      <h4 class="center">Icons</h4>
+      <a href="https://github.com" class="plain">
+        <i class="bi-github medium"></i>
+        <span class="x3-l4 text x3-link-plain">Github</span>
+      </a>
+      <br>
+
+      <div class="x3-row">
+        <button class="x3-button x3-blue-btn" onclick="redirectTo('index.html')">
+          <i class="bi-house"></i>
+        </button>
+        <button class="x3-button x3-orange-btn" onclick="handleClick('download')">
+          <i class="bi-cloud-download"></i>
+          <span class="x3-l4">Download</span>
+        </button>
+        <button class="x3-button x3-grey-btn" onclick="handleClick('refresh')">
+          <i class="bi-arrow-clockwise"></i>
+        </button>
+      </div>
+
+      <div class="x3-row">
+        <div>Loader:</div>
+        <div class="loader"></div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="w3-center w3-container x3-b4" style="margin-top: 64px;">
+    <i class="bi-c-circle"></i>
+    <span>2023 Jack Arnold</span>
+  </footer>
+
+
+</body>
+
+
+
+<!-- SCRIPTS -->
+<script>
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const firstName = $('#firstName').val();
+    const email = $('#email').val();
+    const fruitChoice = $('#fruitSelect').val();
+
+    const bike = $('#vehicle1').prop('checked');
+    const car = $('#vehicle2').prop('checked');
+    const scooter = $('#vehicle3').prop('checked');
+
+    console.log('Form Submitted');
+    console.log(
+      {
+        firstName: firstName,
+        email: email,
+        fruitChoice, fruitChoice,
+        vehicles: {
+          bike: bike,
+          car: car,
+          scooter: scooter,
+        },
+      }
+    );
+  };
+
+
+  const handleClick = (name) => {
+    console.log('You just clicked', name);
+  }
+
+  const redirectTo = (url) => {
+    location.href = url;
+  }
+
+</script>
+
+
+</html>
