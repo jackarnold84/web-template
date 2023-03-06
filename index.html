@@ -71,7 +71,12 @@
 
         <div class="x3-row">
           <label class="x3-label">Email</label>
-          <input class="x3-input" type="text" id="email" autocomplete="off">
+          <input class="x3-input" type="email" id="email" autocomplete="off">
+        </div>
+
+        <div class="x3-row">
+          <label class="x3-label">Age</label>
+          <input class="x3-input" type="number" inputmode="numeric" id="age" autocomplete="off">
         </div>
 
         <!-- select -->
@@ -217,6 +222,7 @@
 
     const firstName = $('#firstName').val();
     const email = $('#email').val();
+    const age = $('#age').val();
     const fruitChoice = $('#fruitSelect').val();
 
     const bike = $('#vehicle1').prop('checked');
@@ -228,6 +234,7 @@
       {
         firstName: firstName,
         email: email,
+        age: age,
         fruitChoice, fruitChoice,
         vehicles: {
           bike: bike,
