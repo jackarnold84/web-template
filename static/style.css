@@ -110,6 +110,7 @@ th {
   border: 1px solid dimgray;
   border-radius: 4px;
   width: 100%;
+  -webkit-appearance: none;
 }
 
 .x3-input:focus,
@@ -145,6 +146,7 @@ th {
   border-radius: 4px;
   border: 1px solid dimgray;
   width: 100%;
+  -webkit-appearance: none;
 }
 
 .x3-select:focus,
