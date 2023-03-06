@@ -107,15 +107,16 @@ th {
 .x3-input {
   font-size: 16px;
   padding: 8px;
-  border: 1px solid dimgray;
+  border: 0;
   border-radius: 4px;
+  box-shadow: 0 0 0 1px dimgray;
   width: 100%;
   -webkit-appearance: none;
 }
 
 .x3-input:focus,
 .x3-input:hover {
-  outline: 1px solid rgb(75, 75, 75);
+  outline: 2px solid rgb(75, 75, 75);
 }
 
 .x3-label {
@@ -142,11 +143,9 @@ th {
 .x3-select {
   font-size: 16px;
   padding: 8px;
-  border: 0;
-  border-radius: 4px;
   border: 1px solid dimgray;
+  border-radius: 4px;
   width: 100%;
-  -webkit-appearance: none;
 }
 
 .x3-select:focus,
