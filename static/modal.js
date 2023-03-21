@@ -1,5 +1,5 @@
 // enable modal functionality
-// add to head <script src="static/modal.js" defer></script>
+// add to head <script src="static/modal.js"></script>
 // use <div class='modal'> and child <div class='modal-content'>
 // add class 'persistent' to disable escaping
 
@@ -10,8 +10,6 @@ const openModal = (id) => {
 const closeModal = () => {
     $('.modal').fadeOut(200);
 }
-
-$('.modal-close').on('click', closeModal);
 
 window.onclick = (e) => {
     if ($(e.target).hasClass('modal') && !$(e.target).hasClass('persistent')) {
