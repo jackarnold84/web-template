@@ -3,7 +3,7 @@
 // layout = {args, ...plotlyLayout}
 // config = {args, ...plotlyConfig}
 
-const plotlyConfig = { displayModeBar: false, showTips: false };
+const plotlyConfig = { displayModeBar: false, showTips: false, responsive: true };
 
 const plotlySimpleWhiteTemplate = {
     "data": {
